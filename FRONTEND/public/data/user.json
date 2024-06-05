@@ -5,7 +5,8 @@
       "apellido": "Pérez",
       "email": "naty@ejemplo.com",
       "clave": "clave123",
-      "rol": "alumno"
+      "rol": "alumno",
+      "icono": ""
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "apellido": "García",
       "email": "eze@ejemplo.com",
       "clave": "clave123",
-      "rol": "profesor"
+      "rol": "profesor",
+      "icono": ""
     },
     {
       "id": 3,
@@ -21,7 +23,8 @@
       "apellido": "Ochoa Henao",
       "email": "estefy@ejemplo.com",
       "clave": "clave123",
-      "rol": "tutor"
+      "rol": "tutor",
+      "icono": ""
     },
     {
       "id": 4,
@@ -29,7 +32,8 @@
       "apellido": "Casasola",
       "email": "hernan@ejemplo.com",
       "clave": "clave123",
-      "rol": "administrativo"
+      "rol": "administrativo",
+      "icono": ""
     }
   ]
   
