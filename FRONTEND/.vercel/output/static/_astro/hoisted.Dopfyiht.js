@@ -1,0 +1,1 @@
+import{C as e}from"./index.DEJhCGxQ.js";const o=document.getElementById("targetEl"),n=document.getElementById("triggerEl"),t={onCollapse:()=>{console.log("element has been collapsed")},onExpand:()=>{console.log("element has been expanded")},onToggle:()=>{console.log("element has been toggled")}},l={id:"targetEl",override:!0},s=new e(o,n,t,l);s.expand();
