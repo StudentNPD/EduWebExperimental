@@ -1,13 +1,23 @@
 ---
 import Layout from "../../layouts/Layout.astro"
-import DashB from "../../components/Dashboard.astro"
+import Dash from "../../components/Dashboard.astro"
+
+
+const links = 
+[
+    { href: '#dashboard', label: 'Dashboard'},
+    { href: '#skill', label: 'Habilidades'},
+    { href: '#', label: 'Materias'},
+    { href: '/', label: '.....'}
+
+]
 
 ---
 
 <Layout title="Dashboard - Alumno">
 
     
-<DashB/>
-
+<Dash links={links}, brand="EduWeb" />
+<!-- <Sidebar links={links}, brand='Dashboard', authenticated= {false} /> -->
     
 </Layout>
