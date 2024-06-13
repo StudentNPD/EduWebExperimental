@@ -6,7 +6,7 @@
     "email": "hernan@email.com",
     "avatar": "https://example.com/avatar1.jpg",
     "auth": {
-      "email": "hernan@mail.com",
+      "email": "hernan@email.com",
       "password": "clave123",
       "rol": "alumno"
     },
