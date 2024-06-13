@@ -3,12 +3,30 @@ interface Props {
    links: Array<{ href: string; label: string }>;
    brand: string;
    //  authenticated: boolean;
+   nombre: String;
+   email: string;
+   avatar: string;
+   rol: string;
 }
 
-const { links, brand } = Astro.props;
+const 
+{ 
+   links, 
+   brand, 
+   nombre, 
+   email,
+   avatar, 
+   rol 
 
-import Skill from "../components/Skill.astro";
-import Heading from "../components/Heading.astro";
+} = Astro.props;
+
+import Skill from "./Skill.astro";
+import Heading from "./Heading.astro";
+import Acordion from "./Acordion.astro";
+
+let alumno = null;
+let promedioMaterias = 0;
+let promedioHabilidades = 0;
 ---
 
 <nav
@@ -51,7 +69,14 @@ import Heading from "../components/Heading.astro";
                >
             </a>
          </div>
+   
          <div class="flex items-center">
+            <p
+            class="text-sm text-gray-900 dark:text-white"
+         >
+            {rol}
+         </p>
+ 
             <div class="flex items-center ms-3">
                <div>
                   <button
@@ -63,7 +88,7 @@ import Heading from "../components/Heading.astro";
                      <span class="sr-only">Open user menu</span>
                      <img
                         class="w-8 h-8 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        src= {avatar}
                         alt="user photo"
                      />
                   </button>
@@ -73,17 +98,18 @@ import Heading from "../components/Heading.astro";
                   id="dropdown-user"
                >
                   <div class="px-4 py-3" role="none">
+              
                      <p
                         class="text-sm text-gray-900 dark:text-white"
                         role="none"
                      >
-                        Neil Sims -- aqui el nombre
+                        {nombre}
                      </p>
                      <p
                         class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
                         role="none"
                      >
-                        neil.sims@flowbite.com -- aqui email
+                        {email}
                      </p>
                   </div>
                   <ul class="py-1" role="none">
@@ -101,13 +127,7 @@ import Heading from "../components/Heading.astro";
                            role="menuitem">Settings</a
                         >
                      </li>
-                     <li>
-                        <a
-                           href="#"
-                           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                           role="menuitem">Earnings</a
-                        >
-                     </li>
+ 
                      <li>
                         <a
                            href="#"
@@ -183,6 +203,15 @@ import Heading from "../components/Heading.astro";
 
       <!-- HEADING FIN -->
 
+
+
+
+
+  
+       
+      
+
+        
       <div class="grid grid-cols-3 gap-4 mb-4">
          <div
             class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-blue-800"
@@ -241,200 +270,99 @@ import Heading from "../components/Heading.astro";
       <!-- </p> -->
       <!-- </div> -->
 
-      <div class="grid grid-cols-2 gap-4 mb-4">
-         <div
-            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-         >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg
-                  class="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-               >
-                  <path
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="2"
-                     d="M9 1v16M1 9h16"></path>
-               </svg>
-            </p>
-         </div>
-
-         <div
-            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-         >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg
-                  class="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-               >
-                  <path
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="2"
-                     d="M9 1v16M1 9h16"></path>
-               </svg>
-            </p>
-         </div>
-
-         <div
-            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-         >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg
-                  class="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-               >
-                  <path
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="2"
-                     d="M9 1v16M1 9h16"></path>
-               </svg>
-            </p>
-         </div>
-
-         <div
-            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-         >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg
-                  class="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-               >
-                  <path
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="2"
-                     d="M9 1v16M1 9h16"></path>
-               </svg>
-            </p>
-         </div>
-      </div>
       <div
-         class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800"
+         class="flex items-center justify-center mb-4 rounded bg-gray-50 dark:bg-gray-950 h-full"
       >
-         <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg
-               class="w-3.5 h-3.5"
-               aria-hidden="true"
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 18 18"
-            >
-               <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 1v16M1 9h16"></path>
-            </svg>
-         </p>
+         <!-- <p class="text-2xl text-gray-400 dark:text-gray-500"> -->
+
+            <div id="content" class="h-full w-full mb-4 rounded bg-gray-50 dark:bg-gray-950 p-5">
+               <p>Loading...</p>
+             </div>
+            
+         <!-- </p> -->
       </div>
 
-      <div class="grid grid-cols-2 gap-4">
-         <div
-            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-         >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg
-                  class="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-               >
-                  <path
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="2"
-                     d="M9 1v16M1 9h16"></path>
-               </svg>
-            </p>
-         </div>
-
-         <div
-            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-         >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg
-                  class="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-               >
-                  <path
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="2"
-                     d="M9 1v16M1 9h16"></path>
-               </svg>
-            </p>
-         </div>
-
-         <div
-            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-         >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg
-                  class="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-               >
-                  <path
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="2"
-                     d="M9 1v16M1 9h16"></path>
-               </svg>
-            </p>
-         </div>
-
-         <div
-            class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-         >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg
-                  class="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-               >
-                  <path
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="2"
-                     d="M9 1v16M1 9h16"></path>
-               </svg>
-            </p>
-         </div>
       </div>
    </div>
 </div>
 
+
+
+ <script>
+         (async function() {
+          const queryParams = new URLSearchParams(window.location.search);
+          const id = queryParams.get('id');
+      
+          if (id) {
+            try {
+              const response = await fetch('../data/alumno.json');
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              const alumnos = await response.json();
+              const alumno = alumnos.find(a => a.id === parseInt(id));
+              if (alumno) {
+                const promedioMaterias = alumno.materias.reduce((total, materia) => total + materia.nota, 0) / alumno.materias.length;
+                const promedioHabilidades = alumno.skills.reduce((total, skill) => total + skill.nota, 0) / alumno.skills.length;
+      
+                // Actualiza el contenido de la página
+                document.getElementById('content').innerHTML = `
+                  <h1 class="text-center mx-10 text-blue-400 mt-10 mb-5">Notas de ${alumno.nombre} ${alumno.apellido}</h1>
+                  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-10">
+                     
+                  <table class="w-full text-sm text-left rtl:text-center text-gray-500 dark:text-gray-400">
+                    <thead class="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                      <tr>
+                        <th scope="col" class="px-6 py-3">Materia</th>
+                        <th scope="col" class="px-6 py-3">Nota</th>
+                        <th scope="col" class="px-6 py-3">Devolución</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${alumno.materias.map(materia => `
+                        <tr class="bg-white border-b dark:bg-indigo-800 dark:border-blue-700">
+                          <td class="px-6 py-4">${materia.nombre}</td>
+                          <td class="px-6 py-4">${materia.nota}</td>
+                          <td class="px-6 py-4">${materia.devolucion}</td>
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                  <p>Promedio general de materias: ${promedioMaterias.toFixed(2)}</p>
+                  </div>
+                  <h2>Habilidades</h2>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Habilidad</th>
+                        <th>Nota</th>
+                        <th>Porcentaje</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${alumno.skills.map(skill => `
+                        <tr>
+                          <td>${skill.nombre}</td>
+                          <td>${skill.nota}</td>
+                          <td>${(skill.nota / 10 * 100).toFixed(0)}%</td>
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                  <p>Promedio general de habilidades: ${promedioHabilidades.toFixed(2)}</p>
+                `;
+              } else {
+                document.getElementById('content').textContent = 'Alumno no encontrado';
+              }
+            } catch (error) {
+              console.error('Error fetching alumno:', error);
+              document.getElementById('content').textContent = 'Error al cargar los datos';
+            }
+          } else {
+            document.getElementById('content').textContent = 'ID de alumno no proporcionado';
+          }
+        })();
+        </script>
 <!-- <script src="../path/to/flowbite/dist/flowbite.min.js"></script> -->
 <script>
    import { Collapse } from "flowbite";

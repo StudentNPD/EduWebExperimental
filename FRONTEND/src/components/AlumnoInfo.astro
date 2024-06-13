@@ -1,0 +1,57 @@
+---
+// Importa los datos del archivo JSON
+import alumnosData from '../../public/data/alumno.json';
+
+// Función para calcular el promedio de las notas
+function calcularPromedio(notas) {
+  const suma = notas.reduce((acc, nota) => acc + nota.nota, 0);
+  return suma / notas.length;
+}
+
+// Función para obtener el mensaje según el promedio
+function obtenerMensajePromedio(promedio) {
+  if (promedio >= 9) {
+    return 'Excelente';
+  } else if (promedio >= 7) {
+    return 'Muy bien';
+  } else {
+    return 'Bien';
+  }
+}
+---
+
+{alumnosData.map((alumno) => (
+  <div>
+    <h2>{alumno.nombre} {alumno.apellido}</h2>
+    <img src={alumno.avatar} alt={`Avatar de ${alumno.nombre}`} width="100" />
+
+    <h3>Materias</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Materia</th>
+          <th>Nota</th>
+        </tr>
+      </thead>
+      <tbody>
+        {alumno.materias.map((materia) => (
+          <tr>
+            <td>{materia.nombre}</td>
+            <td>{materia.nota}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p>Promedio de materias: {calcularPromedio(alumno.materias).toFixed(2)}</p>
+
+    <h3>Skills</h3>
+    <ul>
+      {alumno.skills.map((skill) => (
+        <li>
+          {skill.nombre}: {skill.nota} ({obtenerMensajePromedio(skill.nota)})
+        </li>
+      ))}
+    </ul>
+    <p>Promedio de skills: {calcularPromedio(alumno.skills).toFixed(2)} ({obtenerMensajePromedio(calcularPromedio(alumno.skills))})</p>
+  </div>
+))}

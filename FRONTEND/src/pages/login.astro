@@ -1,0 +1,55 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+</head>
+<body>
+  <h1>Iniciar sesión</h1>
+  <form id="login-form">
+    <input type="email" id="email" placeholder="Correo electrónico" required />
+    <input type="password" id="password" placeholder="Contraseña" required />
+    <button type="submit">Iniciar sesión</button>
+  </form>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const password = (document.getElementById('password') as HTMLInputElement).value;
+
+      // Fetching users from the JSON file
+      fetch('/data/alumno.json')
+        .then(response => response.json())
+        .then(users => {
+          const user = users.find(user => user.auth.email === email && user.auth.password === password);
+          
+          if (user) {
+            // Guardar solo el ID del usuario en localStorage
+            localStorage.setItem('userId', user.id);
+
+            // Redirigir según el rol del usuario
+            switch (user.auth.rol) {
+              case 'alumno':
+                window.location.href = `/notas?id=${user.id}`;
+                break;
+              // Agregar otros casos según los roles necesarios
+              default:
+                alert('Rol no reconocido');
+            }
+          } else {
+            alert('Credenciales incorrectas');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching users:', error);
+          alert('Ocurrió un error al intentar iniciar sesión. Por favor, intenta de nuevo más tarde.');
+        });
+    });
+  </script>
+</body>
+</html>

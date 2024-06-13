@@ -1,0 +1,10 @@
+---
+// Importa el objeto JSON mediante el export por defecto
+import json from '../../public/data/alumno.json';
+import Acordion from "../components/Acordion.astro";
+
+---
+
+<p> {json[0].apellido} </p>
+
+<Acordion />

@@ -1,0 +1,260 @@
+[
+  {
+    "id": 1,
+    "nombre": "Hernan",
+    "apellido": "Casasola",
+    "email": "hernan@email.com",
+    "avatar": "https://example.com/avatar1.jpg",
+    "auth": {
+      "email": "hernan@email.com",
+      "password": "clave123",
+      "rol": "alumno"
+    },
+    "materias": [
+      {
+        "nombre": "Matemáticas",
+        "nota": 8,
+        "devolucion": "Buen desempeño en general, pero necesita mejorar en álgebra."
+      },
+      {
+        "nombre": "Física",
+        "nota": 7,
+        "devolucion": "Buen entendimiento de conceptos básicos, pero dificultades con la cinemática."
+      },
+      {
+        "nombre": "Química",
+        "nota": 9,
+        "devolucion": "Excelente comprensión de los temas y participación activa."
+      },
+      {
+        "nombre": "Biología",
+        "nota": 6,
+        "devolucion": "Necesita mejorar en la comprensión de la genética."
+      },
+      {
+        "nombre": "Historia",
+        "nota": 8,
+        "devolucion": "Muy buen conocimiento de fechas y eventos históricos."
+      },
+      {
+        "nombre": "Geografía",
+        "nota": 7,
+        "devolucion": "Conoce los conceptos básicos, pero necesita trabajar más en mapas."
+      },
+      {
+        "nombre": "Lengua",
+        "nota": 9,
+        "devolucion": "Excelente en gramática y redacción."
+      },
+      {
+        "nombre": "Literatura",
+        "nota": 8,
+        "devolucion": "Buena comprensión de los textos, pero necesita mejorar en análisis crítico."
+      },
+      {
+        "nombre": "Informática",
+        "nota": 9,
+        "devolucion": "Destaca en programación y uso de herramientas informáticas."
+      },
+      {
+        "nombre": "Educación Física",
+        "nota": 7,
+        "devolucion": "Buen rendimiento físico, pero debe mejorar en trabajo en equipo."
+      }
+    ],
+    "skills": [
+      {
+        "nombre": "Pensamiento Crítico",
+        "nota": 8
+      },
+      {
+        "nombre": "Comunicación",
+        "nota": 7
+      },
+      {
+        "nombre": "Trabajo en Equipo",
+        "nota": 9
+      },
+      {
+        "nombre": "Gestión del Tiempo",
+        "nota": 8
+      },
+      {
+        "nombre": "Adaptabilidad",
+        "nota": 7
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Ezequiel",
+    "apellido": "...",
+    "email": "ezequiel@email.com",
+    "avatar": "https://example.com/avatar2.jpg",
+    "auth": {
+      "email": "ezequiel@ejemplo.com",
+      "password": "clave123",
+      "rol": "alumno"
+    },
+    "materias": [
+      {
+        "nombre": "Matemáticas",
+        "nota": 7,
+        "devolucion": "Buen entendimiento, pero necesita práctica en problemas complejos."
+      },
+      {
+        "nombre": "Física",
+        "nota": 8,
+        "devolucion": "Buen dominio de los temas, pero necesita mejorar en problemas aplicados."
+      },
+      {
+        "nombre": "Química",
+        "nota": 6,
+        "devolucion": "Comprensión básica, pero dificultades en química orgánica."
+      },
+      {
+        "nombre": "Biología",
+        "nota": 9,
+        "devolucion": "Excelente en todos los temas, especialmente en biología molecular."
+      },
+      {
+        "nombre": "Historia",
+        "nota": 7,
+        "devolucion": "Buena comprensión general, pero faltan detalles en eventos clave."
+      },
+      {
+        "nombre": "Geografía",
+        "nota": 8,
+        "devolucion": "Buen manejo de conceptos y mapas."
+      },
+      {
+        "nombre": "Lengua",
+        "nota": 6,
+        "devolucion": "Necesita mejorar en redacción y ortografía."
+      },
+      {
+        "nombre": "Literatura",
+        "nota": 7,
+        "devolucion": "Buena comprensión, pero debe profundizar en análisis de textos."
+      },
+      {
+        "nombre": "Informática",
+        "nota": 8,
+        "devolucion": "Muy buen manejo de herramientas y programación."
+      },
+      {
+        "nombre": "Educación Física",
+        "nota": 9,
+        "devolucion": "Excelente rendimiento físico y trabajo en equipo."
+      }
+    ],
+    "skills": [
+      {
+        "nombre": "Pensamiento Crítico",
+        "nota": 7
+      },
+      {
+        "nombre": "Comunicación",
+        "nota": 8
+      },
+      {
+        "nombre": "Trabajo en Equipo",
+        "nota": 6
+      },
+      {
+        "nombre": "Gestión del Tiempo",
+        "nota": 7
+      },
+      {
+        "nombre": "Adaptabilidad",
+        "nota": 8
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Natalia",
+    "apellido": "...",
+    "email": "natalia@email.com",
+    "avatar": "https://example.com/avatar3.jpg",
+    "auth": {
+      "email": "natalia@email.com",
+      "password": "clave123",
+      "rol": "alumno"
+    },
+    "materias": [
+      {
+        "nombre": "Matemáticas",
+        "nota": 9,
+        "devolucion": "Excelente en todos los aspectos matemáticos."
+      },
+      {
+        "nombre": "Física",
+        "nota": 6,
+        "devolucion": "Necesita mejorar en física teórica."
+      },
+      {
+        "nombre": "Química",
+        "nota": 8,
+        "devolucion": "Buen desempeño general, pero debe profundizar en química inorgánica."
+      },
+      {
+        "nombre": "Biología",
+        "nota": 7,
+        "devolucion": "Buena comprensión, pero necesita mejorar en anatomía."
+      },
+      {
+        "nombre": "Historia",
+        "nota": 9,
+        "devolucion": "Excelente conocimiento histórico y análisis de eventos."
+      },
+      {
+        "nombre": "Geografía",
+        "nota": 6,
+        "devolucion": "Debe mejorar en la interpretación de mapas."
+      },
+      {
+        "nombre": "Lengua",
+        "nota": 8,
+        "devolucion": "Muy buena en gramática y expresión escrita."
+      },
+      {
+        "nombre": "Literatura",
+        "nota": 9,
+        "devolucion": "Excelente análisis literario y comprensión de textos."
+      },
+      {
+        "nombre": "Informática",
+        "nota": 7,
+        "devolucion": "Buen manejo de herramientas, pero debe mejorar en programación."
+      },
+      {
+        "nombre": "Educación Física",
+        "nota": 8,
+        "devolucion": "Buen desempeño físico y participación activa."
+      }
+    ],
+    "skills": [
+      {
+        "nombre": "Pensamiento Crítico",
+        "nota": 9
+      },
+      {
+        "nombre": "Comunicación",
+        "nota": 6
+      },
+      {
+        "nombre": "Trabajo en Equipo",
+        "nota": 8
+      },
+      {
+        "nombre": "Gestión del Tiempo",
+        "nota": 7
+      },
+      {
+        "nombre": "Adaptabilidad",
+        "nota": 9
+      }
+    ]
+  }
+]

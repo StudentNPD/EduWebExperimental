@@ -1,39 +1,39 @@
+
 [
-    {
-      "id": 1,
-      "nombre": "Natalia",
-      "apellido": "Pérez",
-      "email": "naty@ejemplo.com",
-      "clave": "clave123",
-      "rol": "alumno",
-      "icono": ""
-    },
-    {
-      "id": 2,
-      "nombre": "Ezequiel",
-      "apellido": "García",
-      "email": "eze@ejemplo.com",
-      "clave": "clave123",
-      "rol": "profesor",
-      "icono": ""
-    },
-    {
-      "id": 3,
-      "nombre": "Estefania",
-      "apellido": "Ochoa Henao",
-      "email": "estefy@ejemplo.com",
-      "clave": "clave123",
-      "rol": "tutor",
-      "icono": ""
-    },
-    {
-      "id": 4,
-      "nombre": "Hernan",
-      "apellido": "Casasola",
-      "email": "hernan@ejemplo.com",
-      "clave": "clave123",
-      "rol": "administrativo",
-      "icono": ""
-    }
-  ]
-  
+  {
+    "id": 1,
+    "nombre": "Natalia",
+    "apellido": "Pérez",
+    "email": "naty@ejemplo.com",
+    "clave": "clave123",
+    "rol": "alumno",
+    "icono": ""
+  },
+  {
+    "id": 2,
+    "nombre": "Ezequiel",
+    "apellido": "García",
+    "email": "eze@ejemplo.com",
+    "clave": "clave123",
+    "rol": "profesor",
+    "icono": ""
+  },
+  {
+    "id": 3,
+    "nombre": "Estefania",
+    "apellido": "Ochoa Henao",
+    "email": "estefy@ejemplo.com",
+    "clave": "clave123",
+    "rol": "tutor",
+    "icono": ""
+  },
+  {
+    "id": 4,
+    "nombre": "Hernan",
+    "apellido": "Casasola",
+    "email": "hernan@ejemplo.com",
+    "clave": "clave123",
+    "rol": "administrativo",
+    "icono": ""
+  }
+]
