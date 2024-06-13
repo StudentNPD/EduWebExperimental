@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "nombre": "Hernan",
-    "apellido": "Casasola",
-    "email": "hernan@email.com",
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "email": "juan@email.com",
     "avatar": "https://example.com/avatar1.jpg",
     "auth": {
-      "email": "hernan@email.com",
+      "email": "alumno@email.com",
       "password": "clave123",
       "rol": "alumno"
     },
