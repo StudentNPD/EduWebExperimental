@@ -217,7 +217,7 @@
           // Redirigir según el rol del usuario
           switch (user.auth.rol) {
             case 'alumno':
-              window.location.href = `/notas?id=${user.id}`;
+              window.location.href = `/dashboard/alumno?id=${user.id}`;
               break;
             // Agregar otros casos según los roles necesarios
             default:
