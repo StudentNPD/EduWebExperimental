@@ -146,75 +146,7 @@
     modal.show();
   </script>
 
-<!-- <script>
-  // Ejemplo de JSON con usuarios
-  const users = [
-    {
-      id: 1,
-      nombre: 'Natalia',
-      apellido: 'Pérez',
-      email: 'naty@ejemplo.com',
-      clave: 'password123',
-      rol: 'alumno'
-    },
-    {
-      id: 2,
-      nombre: 'Ezequiel',
-      apellido: 'García',
-      email: 'ez@ejemplo.com',
-      clave: 'password123',
-      rol: 'profesor'
-    },
-    {
-      id: 3,
-      nombre: 'Carlos',
-      apellido: 'López',
-      email: 'carlos@ejemplo.com',
-      clave: 'password123',
-      rol: 'tutor'
-    },
-    {
-      id: 4,
-      nombre: 'Hernan',
-      apellido: 'Casasola',
-      email: 'hernan@ejemplo.com',
-      clave: 'password123',
-      rol: 'administrativo'
-    }
-  ];
-
-  document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    // Aserción de tipo para decirle a TypeScript que estos elementos son HTMLInputElement
-    const email = (document.getElementById('email') as HTMLInputElement).value;
-    const password = (document.getElementById('password') as HTMLInputElement).value;
-
-    const user = users.find(user => user.email === email && user.clave === password);
-    
-    if (user) {
-      // Redirigir según el rol del usuario
-      switch (user.rol) {
-        case 'alumno':
-          window.location.href = '/dashboard/alumno';
-          break;
-        case 'profesor':
-          window.location.href = '/dashboard/profesor';
-          break;
-        case 'tutor':
-          window.location.href = '/dashboard/tutor';
-          break;
-        case 'administrativo':
-          window.location.href = '/dashboard/administrativo';
-          break;
-        default:
-          alert('Rol no reconocido');
-      }
-    } else {
-      alert('Credenciales incorrectas');
-    }
-  });
-</script> -->
+<!-- 
 <script>
   document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -247,6 +179,47 @@
             case 'administrativo':
               window.location.href = '/dashboard/administrativo';
               break;
+            default:
+              alert('Rol no reconocido');
+          }
+        } else {
+          alert('Credenciales incorrectas');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching users:', error);
+        alert('Ocurrió un error al intentar iniciar sesión. Por favor, intenta de nuevo más tarde.');
+      });
+  });
+</script> -->
+
+
+<script>
+  document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // const email = document.getElementById('email').value;
+    // const password = document.getElementById('password').value;
+
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const password = (document.getElementById('password') as HTMLInputElement).value;
+
+    // Fetching users from the JSON file
+    fetch('/data/alumno.json')
+      .then(response => response.json())
+      .then(users => {
+        const user = users.find(user => user.auth.email === email && user.auth.password === password);
+        
+        if (user) {
+          // Guardar solo el ID del usuario en localStorage
+          localStorage.setItem('userId', user.id);
+
+          // Redirigir según el rol del usuario
+          switch (user.auth.rol) {
+            case 'alumno':
+              window.location.href = `/notas?id=${user.id}`;
+              break;
+            // Agregar otros casos según los roles necesarios
             default:
               alert('Rol no reconocido');
           }
