@@ -1,0 +1,395 @@
+---
+interface Props {
+   links: Array<{ href: string; label: string }>;
+   brand: string;
+   //  authenticated: boolean;
+   nombre: String;
+   email: string;
+   avatar: string;
+   rol: string;
+}
+
+const { links, brand, nombre, email, avatar, rol } = Astro.props;
+
+import Skill from "./Skill.astro";
+import Heading from "./Heading.astro";
+import Acordion from "./Acordion.astro";
+
+let alumno = null;
+let promedioMaterias = 0;
+let promedioHabilidades = 0;
+---
+
+<nav
+   class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gradient-to-r to-sky-800 from-emerald-800 dark:border-gray-700"
+>
+   <div class="px-3 py-3 lg:px-5 lg:pl-3">
+      <div class="flex items-center justify-between">
+         <div class="flex items-center justify-start rtl:justify-end">
+            <button
+               data-drawer-target="logo-sidebar"
+               data-drawer-toggle="logo-sidebar"
+               aria-controls="logo-sidebar"
+               type="button"
+               class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            >
+               <span class="sr-only">Open sidebar</span>
+               <svg
+                  class="w-6 h-6"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+               >
+                  <path
+                     clip-rule="evenodd"
+                     fill-rule="evenodd"
+                     d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                  ></path>
+               </svg>
+            </button>
+            <a href="/" class="flex ms-2 md:me-24">
+               <img
+                  src="/img/logo.png"
+                  class="h-8 me-3 rounded-full"
+                  alt="Logo"
+               />
+               <span
+                  class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white"
+                  >{brand}</span
+               >
+            </a>
+         </div>
+
+         <div class="flex items-center">
+            <p class="text-sm text-gray-900 dark:text-white">
+               {rol}
+            </p>
+
+            <div class="flex items-center ms-3">
+               <div>
+                  <button
+                     type="button"
+                     class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                     aria-expanded="false"
+                     data-dropdown-toggle="dropdown-user"
+                  >
+                     <span class="sr-only">Open user menu</span>
+                     <img
+                        class="w-8 h-8 rounded-full"
+                        src={avatar}
+                        alt="user photo"
+                     />
+                  </button>
+               </div>
+               <div
+                  class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                  id="dropdown-user"
+               >
+                  <div class="px-4 py-3" role="none">
+                     <p
+                        class="text-sm text-gray-900 dark:text-white"
+                        role="none"
+                     >
+                        {nombre}
+                     </p>
+                     <p
+                        class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                        role="none"
+                     >
+                        {email}
+                     </p>
+                  </div>
+                  <ul class="py-1" role="none">
+                     <li>
+                        <a
+                           href="#"
+                           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                           role="menuitem">Dashboard</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="#"
+                           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                           role="menuitem">Settings</a
+                        >
+                     </li>
+
+                     <li>
+                        <a
+                           href="/"
+                           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                           role="menuitem">Sign out</a
+                        >
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</nav>
+
+<!-- SIDEBAR INICIO -->
+
+<aside
+   id="logo-sidebar"
+   class="fixed top-2 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 from-sky-700 dark:border-gray-700"
+   aria-label="Sidebar"
+>
+   <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 from-sky-700">
+      <ul class="space-y-2 font-medium">
+         {
+            links.map((link) => (
+               <li>
+                  <a
+                     href={link.href}
+                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  >
+                     <span class="flex-1 ms-3 whitespace-nowrap">
+                        {link.label}
+                     </span>
+                  </a>
+               </li>
+            ))
+         }
+
+         <hr
+            class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+         />
+         <li>
+            <a
+               href="/"
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+               <span class="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
+            </a>
+         </li>
+      </ul>
+   </div>
+</aside>
+
+<!-- SIDEBAR FIN -->
+
+<div id="dashboard" class="p-4 sm:ml-64">
+   <div
+      class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-green-700 mt-14"
+   >
+      <!-- HEADING INICIO -->
+      <div
+         class="justify-center h-50 rounded bg-gray-50 dark:bg-gray-950 mb-4 p-5"
+      >
+         <Heading
+            titulocolor="INFORMACION"
+            ,
+            titulo=" del Alumno."
+            ,
+            descripcion="Aqui vas a encontraar informacion sobre tus notas por materias, ademas demas de tus atributos en las distintas softskill, y mas."
+         />
+      </div>
+
+      <!-- HEADING FIN -->
+
+      <div class="grid grid-cols-3 gap-4 mb-4">
+         <div
+            class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-blue-800"
+         >
+            <p class="text-2xl text-gray-400 dark:text-gray-400">
+               CURSO: 1ro. 4ta.
+            </p>
+         </div>
+
+         <div
+            class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-blue-800"
+         >
+            <p class="text-2xl text-gray-400 dark:text-gray-400">
+               TURNO: MAÑANA
+            </p>
+         </div>
+
+         <div
+            class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-blue-800"
+         >
+            <p class="text-2xl text-gray-400 dark:text-gray-400">AÑO: 2024</p>
+         </div>
+      </div>
+
+      <!-- <div class="flex items-center justify-center h-60 mb-4 rounded bg-gray-50 dark:bg-green-700"> -->
+      <section id="skill">
+         <div
+            
+            class="h-60 mb-4 rounded bg-gray-50 dark:bg-gray-950 p-5"
+         >
+            <Skill />
+         </div>
+      </section>
+      <!-- <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+              </svg> -->
+      <!-- </p> -->
+      <!-- </div> -->
+      <section id="notas">
+         <div
+            class="flex items-center justify-center mb-4 rounded bg-gray-50 dark:bg-gray-950 h-full"
+         >
+            <!-- <p class="text-2xl text-gray-400 dark:text-gray-500"> -->
+
+            <div
+               id="content"
+               class="h-full w-full mb-4 rounded bg-gray-50 dark:bg-gray-950 p-5"
+            >
+               <p>Loading...</p>
+            </div>
+
+            <!-- </p> -->
+         </div>
+      <div>
+         <span class="inline-flex items-center justify-center w-6 h-6 me-2 text-sm font-semibold text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+            <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+            <span class="sr-only">Icon description</span>
+            </span>
+            <span class="inline-flex items-center justify-center w-6 h-6 me-2 text-sm font-semibold text-blue-800 bg-blue-100 rounded-full dark:bg-gray-700 dark:text-blue-400">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path fill="currentColor" d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"/>
+            <path fill="#fff" d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"/>
+            </svg>
+            <span class="sr-only">Icon description</span>
+            </span>
+            <span class="inline-flex items-center justify-center w-6 h-6 me-2 text-sm font-semibold text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+            </svg>
+            <span class="sr-only">Icon description</span>
+            </span>
+            <span class="inline-flex items-center justify-center w-6 h-6 me-2 text-sm font-semibold text-blue-800 bg-blue-100 rounded-full dark:bg-gray-700 dark:text-blue-400">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">Icon description</span>
+            </span>
+         </div>
+      </section>
+
+  
+   </div>
+</div>
+
+<script>
+   (async function () {
+      const queryParams = new URLSearchParams(window.location.search);
+      const id = queryParams.get("id");
+
+      if (id) {
+         try {
+            const response = await fetch("../data/alumno.json");
+            if (!response.ok) {
+               throw new Error("Network response was not ok");
+            }
+            const alumnos = await response.json();
+            const alumno = alumnos.find((a) => a.id === parseInt(id));
+            if (alumno) {
+               const promedioMaterias =
+                  alumno.materias.reduce(
+                     (total, materia) => total + materia.nota,
+                     0,
+                  ) / alumno.materias.length;
+               const promedioHabilidades =
+                  alumno.skills.reduce(
+                     (total, skill) => total + skill.nota,
+                     0,
+                  ) / alumno.skills.length;
+
+               // Actualiza el contenido de la página
+               document.getElementById("content").innerHTML = `
+                  <h1 class="text-center mx-10 text-blue-400 mt-10 mb-5">Notas de ${alumno.nombre} ${alumno.apellido}</h1>
+                  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-10">
+                     
+                  <table class="w-full text text-left rtl:text-center text-gray-500 dark:text-gray-400">
+                    <thead class="text text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                      <tr>
+                        <th scope="col" class="px-6 py-3">Materia</th>
+                        <th scope="col" class="px-6 py-3">Nota</th>
+                        <th scope="col" class="px-6 py-3">Devolución</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${alumno.materias
+                         .map(
+                            (materia) => `
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-blue-700">
+                          <td class="px-6 py-4">${materia.nombre}</td>
+                          <td class="px-6 py-4">${materia.nota}</td>
+                          <td class="px-6 py-4">${materia.devolucion}</td>
+                        </tr>
+                      `,
+                         )
+                         .join("")}
+                    </tbody>
+                  </table>
+                  <p class = "text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">Promedio general de materias: ${promedioMaterias.toFixed(2)}</p>
+                  </div>`;
+            } else {
+               document.getElementById("content").textContent =
+                  "Alumno no encontrado";
+            }
+         } catch (error) {
+            console.error("Error fetching alumno:", error);
+            document.getElementById("content").textContent =
+               "Error al cargar los datos";
+         }
+      } else {
+         document.getElementById("content").textContent =
+            "ID de alumno no proporcionado";
+      }
+   })();
+</script>
+<!-- <script src="../path/to/flowbite/dist/flowbite.min.js"></script> -->
+<script>
+   import { Collapse } from "flowbite";
+   import type { CollapseOptions, CollapseInterface } from "flowbite";
+   import type { InstanceOptions } from "flowbite";
+
+   // set the target element that will be collapsed or expanded (eg. navbar menu)
+   const $targetEl: HTMLElement = document.getElementById("targetEl");
+
+   // optionally set a trigger element (eg. a button, hamburger icon)
+   const $triggerEl: HTMLElement = document.getElementById("triggerEl");
+
+   // optional options with default values and callback functions
+   const options: CollapseOptions = {
+      onCollapse: () => {
+         console.log("element has been collapsed");
+      },
+      onExpand: () => {
+         console.log("element has been expanded");
+      },
+      onToggle: () => {
+         console.log("element has been toggled");
+      },
+   };
+
+   // instance options object
+   const instanceOptions: InstanceOptions = {
+      id: "targetEl",
+      override: true,
+   };
+
+   /*
+    * $targetEl: required
+    * $triggerEl: optional
+    * options: optional
+    * instanceOptions: optional
+    */
+   const collapse: CollapseInterface = new Collapse(
+      $targetEl,
+      $triggerEl,
+      options,
+      instanceOptions,
+   );
+
+   // show the target element
+   collapse.expand();
+</script>

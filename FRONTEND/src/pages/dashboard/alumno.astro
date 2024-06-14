@@ -1,13 +1,35 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import DashB from "../../components/Dashboard.astro"
+import Layout from "../../layouts/Layout.astro";
+import DashAlumno from "../../components/DashboardAlumno.astro";
+
+const links = [
+    { href: "#dashboard", label: "Dashboard" },
+    { href: "#skill", label: "Habilidades" },
+    { href: "#notas", label: "Notas" },
+];
+
+
+const brand = "EduWeb"
+const nombre = "Juan Perez"
+const email = "alumno@email.com"
+const avatar = "https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+const rol = "Alumno"
 
 ---
 
+
+
 <Layout title="Dashboard - Alumno">
+    <DashAlumno 
+    links={links} , 
+    brand={brand} , 
 
+    email= {email}, 
+    nombre={nombre},
+    avatar={avatar},
+    rol={rol},
     
-<DashB/>
-
-    
+    />
+    <!-- <Sidebar links={links}, brand='Dashboard', authenticated= {false} /> -->
 </Layout>
+

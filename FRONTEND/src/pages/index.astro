@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 // import Card from '../components/Card.astro';
-import NavbarUser from "../components/Navbar-user.astro";
+// import NavbarUser from "../components/Navbar-user.astro";
 import NavbarInicio from "../components/Navbar-inicio.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -29,7 +29,7 @@ import Footer from "../components/Footer.astro";
         <p
           class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48"
         >
-          Nuestra plataforma facilita la interacción entre padres, estudiantes,
+          Nuestra plataforma facilita la interacción entre padres, estudiantes, 
           profesores y personal administrativo. Los profesores ingresan
           calificaciones y comentarios; los estudiantes y padres consultan el
           rendimiento académico en tiempo real. El personal administrativo
@@ -66,78 +66,55 @@ import Footer from "../components/Footer.astro";
 					>
 						Saber mas
 					</a> -->
+
         </div>
       </div>
     </section>
 
+    <div class="p-10">
 
-    <div >
-      <section>
-        <p
-          id="nosotros"
-          class="pt-48 text-1xl font-extrabold tracking-tight leading-none text-white md:text-2xl lg:text-3xl text-center"
-        >
-          Nosotros
-        </p>
 
-        <p
-          class="pb-48 text-center whitespace-pre  text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48"
-        >
-          Con estos datos en mano, comenzaron a trabajar en el desarrollo de una
-          solución tecnológica. Su visión era crear una plataforma digital que
-          integrara todas las funciones necesarias para la gestión escolar en un
-          solo lugar. Esto incluía la programación de clases, la asignación de
-          tareas, la comunicación entre padres y profesores, y el seguimiento
-          del rendimiento estudiantil. Dividieron sus roles según sus
-          fortalezas: mientras algunos se centraban en la programación y el
-          desarrollo de software, otros se dedicaron al diseño de la interfaz de
-          usuario y la experiencia del usuario (UI/UX). El objetivo era crear
-          una plataforma intuitiva y fácil de usar para personas de todas las
-          edades y niveles de habilidad tecnológica. Trabajaron arduamente
-          durante meses, a menudo sacrificando noches y fines de semana para
-          avanzar en el proyecto. La plataforma, a la que llamaron "EduWeb",
-          comenzó a tomar forma. Ofrecía un calendario escolar interactivo, un
-          sistema de gestión de tareas y calificaciones, y una aplicación móvil
-          para que los padres pudieran mantenerse informados sobre el progreso
-          de sus hijos en tiempo real.
-        </p>
-      </section>
-
-      <section class="p-10 pb-48 relative ">
+      <section class="pl-36 pr-36 pb-48 pt-48">
         <!--ULTIMOS TRABAJOS -->
         <!--SALTO A SECTION -->
-        <p
+        <h1
           id="ultimosTrabajos"
-          class="mb-4 text-1xl font-extrabold tracking-tight leading-none text-white md:text-2xl lg:text-3xl text-center"
+          class="flex  justify-left mb-4 text-1xl font-extrabold tracking-tight leading-none text-gray-300 md:text-2xl lg:text-3xl text-left"
         >
-          Últimos trabajos
-        </p>
+        <svg class="w-[48px] h-[48px] text-gray-800 dark:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+          </svg>
+        Últimos trabajos
+          <svg class="w-[48px] h-[48px] text-gray-800 dark:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+          </svg>
+          </h1>
 
         <div class="grid grid-cols-2 gap-2">
           <div>
             <img
-              class="transition-all duration-300 rounded-lg blur-sm hover:blur-none h-auto max-w-full rounded-lg"
+              class="transition-all duration-300 rounded-lg blur-sm hover:blur-none h-auto max-w-full"
               src="/img/colegio-2.png"
               alt=""
             />
           </div>
           <div>
             <img
-              class="transition-all duration-300 rounded-lg blur-sm hover:blur-none h-auto max-w-full rounded-lg"
+              class="transition-all duration-300 rounded-lg blur-sm hover:blur-none h-auto max-w-full"
               src="/img/colegio-1.png"
               alt=""
             />
           </div>
           <div>
             <img
-              class="transition-all duration-300 rounded-lg blur-sm hover:blur-none h-auto max-w-full rounded-lg"
+              class="transition-all duration-300 rounded-lg blur-sm hover:blur-none h-auto max-w-full"
               src="/img/colegio-3.png"
               alt=""
             />
           </div>
           <div>
             <img
-              class="transition-all duration-300 rounded-lg blur-sm hover:blur-none h-auto max-w-full rounded-lg"
+              class="transition-all duration-300 rounded-lg blur-sm hover:blur-none h-auto max-w-full"
               src="/img/colegio-4.png"
               alt=""
             />
@@ -145,17 +122,69 @@ import Footer from "../components/Footer.astro";
         </div>
       </section>
 
+      <section class=" px-96 relative ">
+
+        <a  id="nosotros" href="#" class="block w-full  p-20 ml-10 mr-10  bg-white rounded-lg shadow hover:bg-gray-800 dark:bg-gray-800  dark:hover:bg-gray-700 ">
+        
+          <h1 class="pb-5 mb-3 italic font-light text-center tracking-wider  text-2xl text-gray-300">Nosotros</h1>
+          <p class=" pb-10  font-normal italic  mb-3 text-center tracking-wider  text-lg text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+        
+            Con estos datos en mano, comenzaron a trabajar en el desarrollo de una
+            solución tecnológica. Su visión era crear una plataforma digital que
+            integrara todas las funciones necesarias para la gestión escolar en un
+            solo lugar. 
+        
+            Esto incluía la programación de clases, la asignación de
+            tareas, la comunicación entre padres y profesores, y el seguimiento
+            del rendimiento estudiantil. 
+            <br>
+             
+            Dividieron sus roles según sus fortalezas: mientras algunos se centraban en la programación y el
+            desarrollo de software, otros se dedicaron al diseño de la interfaz de
+            usuario y la experiencia del usuario (UI/UX). 
+             
+            El objetivo era crear
+            una plataforma intuitiva y fácil de usar para personas de todas las
+            edades y niveles de habilidad tecnológica. 
+             <br>
+            Trabajaron arduamente durante meses, a menudo sacrificando noches y fines de semana para
+            avanzar en el proyecto. 
+             
+            La plataforma, a la que llamaron "EduWeb",
+            comenzó a tomar forma. 
+            
+            Ofrecía un calendario escolar interactivo, un
+            sistema de gestión de tareas y calificaciones, y una aplicación móvil
+            para que los padres pudieran mantenerse informados sobre el progreso
+            de sus hijos en tiempo real.
+          </p>
+          <svg class="w-[47px] h-[47px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+          </svg>
+          
+          
+
+          
+          </a>
+              </section>
+
       <!-- SERIVICIOS -->
-      <section class="pl-48 pr-48 pb-48 pt-48">
-        <p
-          id="planes"
-          class="mb-4 text-1xl font-extrabold tracking-tight leading-none text-white md:text-2xl lg:text-3xl text-center"
-        >
-          Planes
-        </p>
+      <section class="pl-36 pr-36 pb-48 pt-48">
+        <h1
+        id="planes"
+        class="flex  justify-left mb-4 text-1xl font-extrabold tracking-tight leading-none text-gray-300 md:text-2xl lg:text-3xl text-left"
+      >
+      <svg class="w-[48px] h-[48px] text-gray-800 dark:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+        </svg>
+      Planes
+        <svg class="w-[48px] h-[48px] text-gray-800 dark:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+        </svg>
+        </h1>
         <div class="grid grid-cols-3 gap-4">
           <div
-            class=" w-full bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+            class=" w-full bg-white  rounded-lg shadow sm:p-8 hover:bg-gray-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
             <h5
               class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400"
@@ -222,9 +251,9 @@ import Footer from "../components/Footer.astro";
                   >Acceso para 5 usuarios (profesores)</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -235,13 +264,14 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Generación de reportes básicos de rendimiento</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -252,44 +282,11 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Soporte de correo electrónico</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
-                <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
-                >
-              </li>
-              <li class="flex line-through decoration-gray-500">
-                <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
-                >
-              </li>
+
             </ul>
             <button
               type="button"
@@ -299,7 +296,7 @@ import Footer from "../components/Footer.astro";
           </div>
 
           <div
-            class="w-full bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+            class="w-full bg-white  rounded-lg shadow sm:p-8 hover:bg-gray-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
             <h5
               class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400"
@@ -329,7 +326,7 @@ import Footer from "../components/Footer.astro";
                 </svg>
                 <span
                   class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
-                  >-</span
+                  >Todo lo incluido en el Plan Básico</span
                 >
               </li>
               <li class="flex">
@@ -346,7 +343,7 @@ import Footer from "../components/Footer.astro";
                 </svg>
                 <span
                   class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
-                  >-</span
+                  >Gestión de tareas y evaluaciones</span
                 >
               </li>
               <li class="flex">
@@ -363,12 +360,12 @@ import Footer from "../components/Footer.astro";
                 </svg>
                 <span
                   class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
-                  >--</span
+                  >Acceso para 20 usuarios (profesores y administradores)</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -379,13 +376,13 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Generación de reportes avanzados de rendimiento y asistencia</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -396,13 +393,13 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Integración con sistemas de comunicación (correo y mensajería interna)</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -413,13 +410,13 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Soporte por correo electrónico y chat en línea</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -430,8 +427,8 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Almacenamiento en la nube para archivos de hasta 50GB</span
                 >
               </li>
             </ul>
@@ -443,7 +440,8 @@ import Footer from "../components/Footer.astro";
           </div>
 
           <div
-            class="w-full bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+            class="w-full bg-white  rounded-lg shadow sm:p-8 hover:bg-gray-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+            
           >
             <h5
               class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400"
@@ -473,7 +471,7 @@ import Footer from "../components/Footer.astro";
                 </svg>
                 <span
                   class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
-                  >-</span
+                  >Todo lo incluido en el Plan Estándar</span
                 >
               </li>
               <li class="flex">
@@ -490,7 +488,7 @@ import Footer from "../components/Footer.astro";
                 </svg>
                 <span
                   class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
-                  >-</span
+                  >Almacenamiento en la nube para archivos de hasta 200GB</span
                 >
               </li>
               <li class="flex">
@@ -507,12 +505,12 @@ import Footer from "../components/Footer.astro";
                 </svg>
                 <span
                   class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
-                  >--</span
+                  >Acceso ilimitado para usuarios (profesores, administradores y padres)</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -523,13 +521,13 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Personalización de la interfaz de usuario según la identidad del colegio.</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -540,13 +538,13 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Notificaciónes automáticas por correo y SMS</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -557,13 +555,13 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Interfaz análitica con gráficos y estadísticas en tiempo real</span
                 >
               </li>
-              <li class="flex line-through decoration-gray-500">
+              <li class="flex  decoration-gray-500">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                  class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -574,8 +572,8 @@ import Footer from "../components/Footer.astro";
                   ></path>
                 </svg>
                 <span
-                  class="text-base font-normal leading-tight text-gray-500 ms-3"
-                  >-</span
+                  class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                  >Sistema de administración de exámenes online</span
                 >
               </li>
             </ul>
@@ -591,7 +589,8 @@ import Footer from "../components/Footer.astro";
       <section class="flex items-center justify-center p-20">
         <div
           id="contactanos"
-          class="max-w-md text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+          class="max-w-md text-center bg-white  rounded-lg shadow sm:p-8  hover:bg-gray-800 hover:bg-gray-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:bg-gray-700 "
+          
         >
           <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
             ¿Aún tienes dudas? Contactanos!
